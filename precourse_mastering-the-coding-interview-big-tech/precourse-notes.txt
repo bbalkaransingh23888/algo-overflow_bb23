@@ -40,4 +40,9 @@ Step 3: Figure out a solution without code (pseudocode) =>
             iii)p2 = 11 - 7 = 4 -> no possible answer 
             iv) p2 = 11 - 9 = 2 -> solution; 9 -> index 3, 2 -> index 4
 
-    
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter 1: Section 1 for solution
+
+Step 5: Test the solution against the test cases
+
