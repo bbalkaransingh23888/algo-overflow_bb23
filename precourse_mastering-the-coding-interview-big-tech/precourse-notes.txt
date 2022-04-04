@@ -45,5 +45,14 @@ a solution if one exists and returns a message or something if there is no solut
 available. See precourse-solutions.py Chapter 1: Section 1 for solution
 
 Step 5: Test the solution against the test cases and code explanation => 
-
+    - explanation: Pointer 1, or i, points to the first element in the array. Pointer
+    2, or j, points to each element following i. i is set to iterate through
+    the length of the array while j is set to iterate through the remainder 
+    array that follows i. In order to get the solution, take the target and 
+    subtract i from it, then see if it is the same as j. If so, return the indices
+    of i and j. Otherwise, keep iterating through the array. If j iterates through the array
+    without a solution, then i will be moved to the next element and j will be reset
+    to the element folllowing i. If i iterates through the array without a 
+    solution, return null because there is no solution based on the target
+    and the array elements.
 
