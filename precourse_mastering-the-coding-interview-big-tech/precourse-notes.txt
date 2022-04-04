@@ -44,5 +44,6 @@ Step 4: Brute Force Solution => Get to a working solution that is able to find
 a solution if one exists and returns a message or something if there is no solution
 available. See precourse-solutions.py Chapter 1: Section 1 for solution
 
-Step 5: Test the solution against the test cases
+Step 5: Test the solution against the test cases and code explanation => 
+
 

@@ -1,6 +1,6 @@
-### ARRAYS: EASY - TWO SUM ###
+### Chapter 1: ARRAYS: EASY - TWO SUM ###
 
-##BRUTE FORCE SOLUTION##
+##Section 1: BRUTE FORCE SOLUTION##
 def two_sum(nums, t):
     # p1, or i, compares each number for the length of the array, 
     # which is derived from length - 1 (arrays start at 0, 
@@ -11,9 +11,11 @@ def two_sum(nums, t):
         # len(nums) has the count include every number except the element in i 
         # and the prior elements where applicable
         for j in range(i+1, len(nums)):
-            # if the two pointers eventually add up to the target, 
-            if nums[i] + nums[j] == t:
+            # if the target, or t, minus pointer 1, or i, is equal to
+            # pointer 2, or j, the solution is i and j.  
+            if t - nums[i] == nums[j]:
                 print(i, j)
+    # If no answer is found, print null
     print("null")
 
 two_sum([1,3,7,9,2], 11)
