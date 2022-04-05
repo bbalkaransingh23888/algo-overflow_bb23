@@ -156,3 +156,14 @@ Step 3: Figure out a solution without code (pseudocode) =>
 Step 4: Brute Force Solution => Get to a working solution that is able to find
 a solution if one exists and returns a message or something if there is no solution
 available. See precourse-solutions.py Chapter 2: Section 1 for solution
+
+Step 5: Step 5: Code explanation => 
+
+Step 6: Test the code against the edgecases =>
+
+Step 7: Space and Time Complexity =>
+
+Step 8: Optimize the Solution See precourse-solutions.py 
+Chapter 2: Section 2 for solution =>
+
+Step 9:  Repeat Steps 5-7 with Optimized Solution:

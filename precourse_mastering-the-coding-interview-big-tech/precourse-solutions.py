@@ -56,7 +56,29 @@ def container_with_most_water(walls):
    print(max_area)
 
 
-container_with_most_water([7,1,2,3,9])
-container_with_most_water([])
-container_with_most_water([7])
-container_with_most_water([6,9,3,4,5,8])
+# container_with_most_water([7,1,2,3,9])
+# container_with_most_water([])
+# container_with_most_water([7])
+# container_with_most_water([6,9,3,4,5,8])
+
+##Section 2 - OPTIMAL SOLUTION##
+def container_with_most_water_optimal(walls):
+   i = 0
+   j = (len(walls)-1)
+   max_area = 0
+   while i < j:
+        height = min(walls[i],walls[j])
+        width = j-i
+        area = height*width
+        max_area = max(max_area, area)
+        if walls[i]<=walls[j]:
+            i += 1
+        else:
+            j -= 1
+   print(max_area)
+
+
+# container_with_most_water_optimal([7,1,2,3,9])
+# container_with_most_water_optimal([])
+# container_with_most_water_optimal([7])
+# container_with_most_water_optimal([6,9,3,4,5,8])
