@@ -1,3 +1,42 @@
+### Steps to Solving Technical Questions ###
+
+Question: 
+
+ex: input => ; output => 
+
+
+Step 1: Verify the constraints (think about edgecases) => 
+    
+
+Step 2: Write out test cases => 
+    - Best case: input => ; output => 
+    
+
+Step 3: Figure out a solution without code (pseudocode) =>
+    - input => 
+   
+
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter 1: Section 1 for solution
+
+Step 5: Code explanation => 
+    - explanation: 
+
+Step 6: Test the code against the edgecases =>
+    - No solution: input => 
+
+Step 7: Space and Time Complexity =>
+    - How much of the time and space resources will consume relative to the input size,
+    since inputs usually scale ?
+
+Step 8: Optimize the Solution =>
+    - Can the solution be optimized? If one Complexity is significantly better
+    than the other, then the solution can be optimized. 
+
+
+Step 9: Repeat Steps 5-7 with Optimized Solution =>
+
 ### ARRAYS: EASY - TWO SUM ###
 
 Question: Given an array of integers, return the indices of the two numbers
@@ -167,3 +206,47 @@ Step 8: Optimize the Solution See precourse-solutions.py
 Chapter 2: Section 2 for solution =>
 
 Step 9:  Repeat Steps 5-7 with Optimized Solution:
+
+
+### ARRAYS: HARD - TRAPPING RAINWATER ###
+
+Question: Given an array of integers representing an elevation map where the width
+of each bar is 1, return how much rainwater can be trapped
+ex: => [0,1,0,2,1,0,3,1,0,1,2] -> 8
+
+
+Step 1: Verify the constraints (think about edgecases) => 
+    - Do the left and right sides of the graph count as walls?
+    - Will there be negative integers?
+    
+
+Step 2: Write out test cases => 
+    - Best Case: input => [0,1,0,2,1,0,3,1,0,1,2]; output => 8
+    - Empty Array: input => []; output => 0
+    - One element Array: input => [3]; output => 0
+    - Something like [3,4,3]: input => [3,4,3]; output => 0
+
+Step 3: Figure out a solution without code (pseudocode) =>
+    - input => [0,1,0,2,1,0,3,1,0,1,2]
+    - Some similar logic to the previous question in that the smaller wall determines
+    the length of each small container of water; however, the heights inside the container
+    affects the amount of water contained as well
+    - rainwater = min(max_left, max_right) - current_height
+    - rainwater= 0, max_left=0, max_right=0
+    - 
+
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter 3: Section 1 for solution
+
+Step 5: Step 5: Code explanation => 
+
+Step 6: Test the code against the edgecases =>
+
+Step 7: Space and Time Complexity =>
+
+Step 8: Optimize the Solution See precourse-solutions.py 
+Chapter 2: Section 2 for solution =>
+
+Step 9:  Repeat Steps 5-7 with Optimized Solution =>
+

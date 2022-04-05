@@ -1,3 +1,41 @@
+### Preface: Steps to Solving Technical Questions ###
+# Question: 
+
+# ex: input => ; output => 
+
+
+# Step 1: Verify the constraints (think about edgecases) => 
+    
+
+# Step 2: Write out test cases => 
+#     - Best case: input => ; output => 
+    
+
+# Step 3: Figure out a solution without code (pseudocode) =>
+#     - input => 
+   
+
+# Step 4: Brute Force Solution => Get to a working solution that is able to find
+# a solution if one exists and returns a message or something if there is no solution
+# available. See precourse-solutions.py Chapter 1: Section 1 for solution
+
+# Step 5: Code explanation => 
+#     - explanation: 
+
+# Step 6: Test the code against the edgecases =>
+#     - No solution: input => 
+
+# Step 7: Space and Time Complexity =>
+#     - How much of the time and space resources will consume relative to the input size,
+#     since inputs usually scale ?
+
+# Step 8: Optimize the Solution 
+#     - Can the solution be optimized? If one Complexity is significantly better
+#     than the other, then the solution can be optimized. 
+
+
+# Step 9: Repeat Steps 5-7 with Optimized Solution:
+
 ### Chapter 1: ARRAYS: EASY - TWO SUM ###
 
 ##Section 1: BRUTE FORCE SOLUTION##
@@ -82,3 +120,37 @@ def container_with_most_water_optimal(walls):
 # container_with_most_water_optimal([])
 # container_with_most_water_optimal([7])
 # container_with_most_water_optimal([6,9,3,4,5,8])
+
+
+
+### Chapter 3 - ARRAYS: HARD - TRAPPING RAINWATER ###
+
+##Section 1 - BRUTE FORCE SOLUTION##
+def trapping_rainwater(heights):
+    total_rainwater = 0
+    for i in range(len(heights)-1):
+        left = i 
+        right = i
+        max_left = 0 
+        max_right = 0
+        while left >= 0:
+            max_left = max(max_left, heights[left])
+            left -= left
+        while right <= len(heights):
+            max_right = max(max_right, heights[right])
+            right += right
+        
+        current_water = current_water + (min(max_left, max_right) - heights[i])
+        if current_water >= 0:
+            total_rainwater = current_water + total_rainwater
+    print(total_rainwater)
+    
+
+trapping_rainwater([0,1,0,2,1,0,3,1,0,1,2])
+trapping_rainwater([])
+trapping_rainwater([1])
+trapping_rainwater([3,4,3])
+
+
+        
+##Section 2 - OPTIMAL SOLUTION##
