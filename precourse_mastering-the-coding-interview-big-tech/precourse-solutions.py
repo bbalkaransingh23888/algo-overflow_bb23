@@ -18,8 +18,23 @@ def two_sum(nums, t):
     # If no answer is found, print null
     print("null")
 
-two_sum([1,3,7,9,2], 11)
-two_sum([2], 2)
-two_sum([], 1)
-two_sum([2,3], 5)
-two_sum([1,2,3], 6)
+# two_sum([1,3,7,9,2], 11)
+# two_sum([2], 2)
+# two_sum([], 1)
+# two_sum([2,3], 5)
+# two_sum([1,2,3], 6)
+
+##OPTIMAL SOLUTION##
+def two_sum_optimal(nums, t):
+    num_dict = {}
+    for i in range(len(nums)):
+        if t - nums[i] in num_dict:
+            print([num_dict[t - nums[i]], i])
+        num_dict[nums[i]] = i
+    print("null")
+#two_sum_optimal([1,3,7,9,2], 11)
+#two_sum_optimal([2], 2)
+#two_sum_optimal([], 1)
+#two_sum_optimal([2,3], 5)
+#two_sum_optimal([1,2,3], 6)
+
