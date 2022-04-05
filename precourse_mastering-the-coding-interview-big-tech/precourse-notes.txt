@@ -44,7 +44,7 @@ Step 4: Brute Force Solution => Get to a working solution that is able to find
 a solution if one exists and returns a message or something if there is no solution
 available. See precourse-solutions.py Chapter 1: Section 1 for solution
 
-Step 5: Test the solution against the test cases and code explanation => 
+Step 5: Code explanation => 
     - explanation: Pointer 1, or i, points to the first element in the array. Pointer
     2, or j, points to each element following i. i is set to iterate through
     the length of the array while j is set to iterate through the remainder 
@@ -56,3 +56,51 @@ Step 5: Test the solution against the test cases and code explanation =>
     solution, return null because there is no solution based on the target
     and the array elements.
 
+Step 6: Test the code against the edgecases =>
+    - No solution: input => [1,3,7,9,2], t = 25; output => null
+        status: complete
+    - Empty array: input => [], t=1; output => null
+        status: complete
+    - One number array: input => [5], t=5; output => null (looking for a pair of numbers)
+        status: complete
+    - Low hanging fruit: input => [1,6], t=7; output => [0,1]
+        status: complete
+
+Step 7: Space and Time Complexity =>
+    - How much of the time and space resources will consume relative to the input size,
+    since inputs usually scale (in twoSum, the only part that scales is the nums array)
+    - Time Complexity: How many more iterations does the code have to run if
+    the code gets bigger (in twoSum, it's just the loops, which both have a 
+    time complexity of N because if we have 8 more array elements, we will run 8
+    more iterations. Combined, they will run in O(N^2)).
+    - In Time Complexity, we think about the Time relationship of the iteration 
+    relative to the size of the input itself. Therefore, if adding 4 elements to 
+    the input array, it will lead to 4 more iterations of the pointer 1 (i)
+    loop and 4 more iterations of the pointer 2 (j) loop for each i loop, meaning
+    for each element there will be 4*4 more iterations of the function for each element
+    added. 
+    - For Space Complexity, since the code's just setting variables (pointer 
+    1, or i, and pointer 2, or j), the Space Complexity is O(1), which 
+    is the optimal Space Complexity.
+    - There are two types of Complexities (for both Space and Time). One is Polynomial, and
+    the other is Exponential. The difference between Polynomial and Exponential is
+    that in Polynomial, the Base of the equation is dynamic but the Exponent is static
+    assuming there is one, whereas in Exponential, the Exponent is dynamic. Examples of
+    Polynomial complexities are O(LogN) - Logarithmic, O(N) - Linear, O(NLogN) - Linearithmic,
+    O(N^2) - Quadritic, and O(N^3) - Cubic. Examples of Exponential are O(2^N) or O(N^N) - Exponential 
+    and O(!N) - Factoral. Polynomial Complexities are generally favorable whereas
+    Exponential Complexities are considered unfavorable. If your complexities end up
+    being Exponential ones, the solution most likely can be optimized.
+
+Step 8: Optimize the Solution =>
+    - Can the solution be optimized? If one Complexity is significantly better
+    than the other, then the solution can be optimized. 
+    - Utilize a Hash Map to optimize the solution. 
+        i) [1,3,7,9,2], t = 11
+        ii) Calculate the NTF (11 - 1 = 10, 11 - 3 = 8, 11 - 7 = 4, 
+        11 - 9 = 2, 11 - 2 = 9) and add each to the 
+        hash map
+        iii)hash map = {10: 0, 8: 1, 4: 2, 2: 3, 9: 4}. Basically, we store the NTF 
+        in the hash map as keys and the indices those numbers
+        were found at as the values. 
+        iv) Then, we compare i to the key
