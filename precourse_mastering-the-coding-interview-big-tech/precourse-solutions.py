@@ -1,6 +1,9 @@
 ### Chapter 1: ARRAYS: EASY - TWO SUM ###
 
 ##Section 1: BRUTE FORCE SOLUTION##
+import math
+
+
 def two_sum(nums, t):
     # p1, or i, compares each number for the length of the array, 
     # which is derived from length - 1 (arrays start at 0, 
@@ -24,7 +27,7 @@ def two_sum(nums, t):
 # two_sum([2,3], 5)
 # two_sum([1,2,3], 6)
 
-##OPTIMAL SOLUTION##
+##Section 2: OPTIMAL SOLUTION##
 def two_sum_optimal(nums, t):
     num_dict = {}
     for i in range(len(nums)):
@@ -38,3 +41,22 @@ def two_sum_optimal(nums, t):
 #two_sum_optimal([2,3], 5)
 #two_sum_optimal([1,2,3], 6)
 
+
+### Chapter 2 - ARRAYS: MEDIUM - CONTAINER WITH MOST WATER ###
+
+##Section 1 - BRUTE FORCE SOLUTION##
+def container_with_most_water(walls):
+   max_area = 0
+   for i in range(len(walls)-1):
+       for j in range(i+1, len(walls)):
+           height = min(walls[i],walls[j])
+           width = j-i
+           area = height*width
+           max_area = max(max_area, area)
+   print(max_area)
+
+
+container_with_most_water([7,1,2,3,9])
+container_with_most_water([])
+container_with_most_water([7])
+container_with_most_water([6,9,3,4,5,8])
