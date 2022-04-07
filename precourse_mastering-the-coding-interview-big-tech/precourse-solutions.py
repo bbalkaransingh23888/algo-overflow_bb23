@@ -39,6 +39,7 @@
 ### Chapter 1: ARRAYS: EASY - TWO SUM ###
 
 ##Section 1: BRUTE FORCE SOLUTION##
+from curses.ascii import isalnum
 import math
 
 
@@ -146,11 +147,139 @@ def trapping_rainwater(heights):
     print(total_rainwater)
     
 
-trapping_rainwater([0,1,0,2,1,0,3,1,0,1,2])
-trapping_rainwater([])
-trapping_rainwater([1])
-trapping_rainwater([3,4,3])
+# trapping_rainwater([0,1,0,2,1,0,3,1,0,1,2])
+# trapping_rainwater([])
+# trapping_rainwater([1])
+# trapping_rainwater([3,4,3])
 
 
         
 ##Section 2 - OPTIMAL SOLUTION##
+
+### Chapter 4 - STRINGS: EASY - TYPED OUT STRINGS/BACKSPACE STRING COMPARE
+
+##Section 1 - BRUTE FORCE SOLUTION##
+def backspace_string_compare(str_s, str_t):
+    arr_s = []
+    arr_t = []
+
+    for i in str_s: 
+        if i == "#" and arr_s != []:
+            arr_s.pop()
+        else:
+            arr_s.append(i)
+        
+    
+    for j in str_t:
+        if j == "#" and arr_t != []:
+            arr_t.pop()
+        else:
+            arr_t.append(j)
+
+    if arr_s == arr_t:
+        print(True)
+    else:
+        print(False)
+
+# backspace_string_compare("ab#z","az#z")
+# backspace_string_compare("abc#d","acc#c")
+# backspace_string_compare("x#y#z#","a#")
+# backspace_string_compare("a###b","b")
+# backspace_string_compare("Ab#z","ab#z")
+
+##Section 2 - OPTIMAL SOLUTION##
+
+
+### Chapter 5 - STRINGS: MEDIUM - LONGEST SUBSTRINE WITHOUT REPEATING CHARACTERS ###
+
+##Section 1 - BRUTE FORCE SOLUTION##
+def longest_substring_without_repeating_characters(str):
+    longest = 0
+    
+    if len(str) <= 1: 
+        longest = print (len(str))
+
+    for i in str:
+        length = 0
+        j = i
+        for j in str:
+            chars = {}
+            curr_chars = j
+            if chars[curr_chars] != chars:
+                length += 1
+                chars[curr_chars] = True
+                longest = max(longest,curr_chars)
+            else:
+                break
+    print(longest)
+
+# longest_substring_without_repeating_characters("abccabb")
+# longest_substring_without_repeating_characters("ccccc")
+# longest_substring_without_repeating_characters("")
+# longest_substring_without_repeating_characters("s")
+# longest_substring_without_repeating_characters("abcbda")
+
+ ##Section 2 - OPTIMAL SOLUTION##
+
+
+ ### CHAPTER 6a - STRINGS: EASY - VALID PALINDROME ###
+
+ ## Section 1 - BRUTE FORCE SOLUTION ##
+def valid_palindrome(str):
+    str = str.lower().replace("^[a-z0-9]+$", "")
+    str_norm = []
+    str_rev = []
+    for i in str:
+        if i.isalnum():
+            str_norm.append(i)
+
+    for j in reversed(str):
+        if j.isalnum():
+            str_rev.append(j)
+    
+    if str_norm == str_rev:
+        print("True")
+    else:
+        print("False")
+
+
+# valid_palindrome("aabaa")
+# valid_palindrome("aabbaa")
+# valid_palindrome("abc")
+# valid_palindrome("a")
+# valid_palindrome("")
+# valid_palindrome("A man, a plan, a canal: Panama")
+
+
+### Chapter 6b - STRINGS: EASY - VALID PALINDROME ###
+
+## Section 1 - BRUTE FORCE SOLUTION ##
+def valid_sub_palindrome(str,i,j):
+    while i < j:
+        if str[i] != str[j]:
+            return False
+        i += 1
+        j -= 1
+    return True
+
+
+def almost_palindrome(str):
+    str = str.lower().replace("^[a-z0-9]+$", "")
+    i = 0
+    j = len(str)-1
+    
+    while i<j:
+        if str[i] != str[j]:
+            return valid_sub_palindrome(str,i+1,j) or valid_sub_palindrome(str,i,j-1)
+        i += 1
+        j -= 1
+    return True
+
+
+print(almost_palindrome("race a car")) #True
+print(almost_palindrome("aba")) #True
+print(almost_palindrome("abccdba")) #True
+print(almost_palindrome("abcdefdba")) #False
+print(almost_palindrome("a")) #True
+print(almost_palindrome("")) #True
+print(almost_palindrome("ab")) #True

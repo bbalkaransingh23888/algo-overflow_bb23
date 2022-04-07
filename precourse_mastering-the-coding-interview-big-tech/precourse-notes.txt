@@ -18,7 +18,7 @@ Step 3: Figure out a solution without code (pseudocode) =>
 
 Step 4: Brute Force Solution => Get to a working solution that is able to find
 a solution if one exists and returns a message or something if there is no solution
-available. See precourse-solutions.py Chapter 1: Section 1 for solution
+available. See precourse-solutions.py Chapter x: Section 1 for solution
 
 Step 5: Code explanation => 
     - explanation: 
@@ -30,7 +30,8 @@ Step 7: Space and Time Complexity =>
     - How much of the time and space resources will consume relative to the input size,
     since inputs usually scale ?
 
-Step 8: Optimize the Solution =>
+Step 8: Optimize the Solution => See precourse-solutions.py 
+Chapter x: Section 2 for solution =>
     - Can the solution be optimized? If one Complexity is significantly better
     than the other, then the solution can be optimized. 
 
@@ -132,7 +133,7 @@ Step 7: Space and Time Complexity =>
     being Exponential ones, the solution most likely can be optimized.
 
 Step 8: Optimize the Solution See precourse-solutions.py 
-Chapter 1: Section 2 for solution=>
+Chapter 1: Section 2 for solution =>
     - Can the solution be optimized? If one Complexity is significantly better
     than the other, then the solution can be optimized. 
     - Utilize a Hash Map to optimize the solution. 
@@ -250,3 +251,216 @@ Chapter 2: Section 2 for solution =>
 
 Step 9:  Repeat Steps 5-7 with Optimized Solution =>
 
+
+### STRINGS: EASY - TYPED OUT STRINGS/BACKSPACE STRING COMPARE ###
+
+Question: Given two strings S and T, return if they equal when both are
+typed out. Any '#' that appears in the string counts as a backspace.
+
+ex: input => S: "ab#c" T: "az#c" ; output => True b/c the # deletes the 
+preceding element, meaning S: "ac" = S: "ac"
+
+
+Step 1: Verify the constraints (think about edgecases) =>
+    - What happens when two hashes appear consecutively? "ab##" ->
+    delete two preceding characters
+    - What happens when there's no character to delete? Does nothing
+    - Are two empty strings equal? yes
+    - Does case-sensitivity matter? yes a != A
+
+    
+
+Step 2: Write out test cases => 
+    - Best case: input => S:"ab#z", T: "az#z"; output => "az" -> True
+    - Obvious wrong answer: input => S:"abc#d", T:"acc#c" => output => False
+    - Unequal length: input => S:"x#y#z#", T:"a#"; output => True
+    - Multiple Hashes: input => S: "a###b", T: "b"; output => True
+    - Case-sensitivite: input => S: "Ab#z", T: "ab#z"; output => False
+    
+
+Step 3: Figure out a solution without code (pseudocode) =>
+    - input => 
+   
+
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter 4: Section 1 for solution
+
+Step 5: Code explanation => 
+    - explanation: 
+
+Step 6: Test the code against the edgecases =>
+    - No solution: input => 
+
+Step 7: Space and Time Complexity =>
+    - How much of the time and space resources will consume relative to the input size,
+    since inputs usually scale ?
+
+Step 8: Optimize the Solution => See precourse-solutions.py 
+Chapter 4: Section 2 for solution =>
+    - Can the solution be optimized? If one Complexity is significantly better
+    than the other, then the solution can be optimized. 
+
+
+Step 9: Repeat Steps 5-7 with Optimized Solution =>
+
+
+
+### STRINGS: MEDIUM - LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS ###
+
+Question: Given a string, find the length of the longest substring without
+repeating characters.
+
+ex: input => "abccabb"; output => 3 -> "abc" is one substring w/o repeats,
+"cab is the other". Both have a length of 3, so the longest substring without 
+repeats is 3.
+
+
+Step 1: Verify the constraints (think about edgecases) => 
+    - Is the substring contiguous? yes, look for substring and not subsequence
+        a. contiguous - characters are sequential and do not have breaks in between
+        b. substrings are contiguous, subsequence is not contiguous
+    - Does case sensitivity matter? All letters are lowercase, so no
+    
+
+Step 2: Write out test cases => 
+    - Best case: input => "abccabb"; output => 3 (two strings with length of 3)
+    - Bunch of repeating characters: input => "ccccc"; output => 1
+    - Empty string: input => " "; output => 0
+    - Overlapping strings: input => "abcbda"; output => 4 
+    
+
+Step 3: Figure out a solution without code (pseudocode) =>
+    - input => "abccabb"
+    - Take all substrings without repeating characters, and return the length
+    of the longest
+    -
+   
+
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter x: Section 1 for solution
+
+Step 5: Code explanation => 
+    - explanation: 
+
+Step 6: Test the code against the edgecases =>
+    - No solution: input => 
+
+Step 7: Space and Time Complexity =>
+    - How much of the time and space resources will consume relative to the input size,
+    since inputs usually scale ?
+
+Step 8: Optimize the Solution => See precourse-solutions.py 
+Chapter x: Section 2 for solution =>
+    - Can the solution be optimized? If one Complexity is significantly better
+    than the other, then the solution can be optimized. 
+
+
+Step 9: Repeat Steps 5-7 with Optimized Solution =>
+
+
+**Subproblems: a problem we have to solve in order to solve a main problem**
+    - Solutions to subproblems often help to find the solution to the main problem
+
+**Palindromes: strings that read the same forwards and backwards**
+### STRINGS: EASY - VALID PALINDROME ###
+
+Question: Given a string, determine if it is a palindrome, considering only 
+alphanumeric characters and ignoring case sensitivity 
+
+ex: input => "racecar"; output => True 
+
+
+Step 1: Verify the constraints (think about edgecases) => 
+    - Edgecases are clearly laid out in the question
+    
+
+Step 2: Write out test cases => 
+    - Best case: input => "aabaa" ; output => True
+    - Even in length: input => "aabbaa" ; output =>  True
+    - Clear fail: input => "abc"; output => False
+    - One char: input => "a"; output => True
+    - Empty string: input => ""; output => True
+    - Case sensitivity & non-alphanumeric characters: 
+    input => "A man, a plan, a canal: Panama"; output => True    
+
+
+Step 3: Figure out a solution without code (pseudocode) =>
+    - input => "aabaa"
+    - remove any non-alphanumeric characters and capital letters - 
+    use the replace string method -> str = str.replace(/[^A-Z a-z 0-9]/g, "").toLowerCase();
+   
+
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter x: Section 1 for solution
+
+Step 5: Code explanation => 
+    - explanation: 
+
+Step 6: Test the code against the edgecases =>
+    - No solution: input => 
+
+Step 7: Space and Time Complexity =>
+    - How much of the time and space resources will consume relative to the input size,
+    since inputs usually scale ?
+
+Step 8: Optimize the Solution => See precourse-solutions.py 
+Chapter x: Section 2 for solution =>
+    - Can the solution be optimized? If one Complexity is significantly better
+    than the other, then the solution can be optimized. 
+
+
+Step 9: Repeat Steps 5-7 with Optimized Solution =>
+
+
+
+
+### STRINGS: EASY - ALMOST PALINDROME ###
+
+Question: Given a string, determine if it is almost a palindrome. A string 
+is almost a palindrome if it becomes a palindrome by removing 1 letter. Consider
+only alphanumeric characters and ignore case sensitivity.
+ex: input => ; output => 
+
+
+Step 1: Verify the constraints (think about edgecases) => 
+    - Do we consider actual palindromes almost palindromes? Yes
+    
+
+Step 2: Write out test cases => 
+    - Best case: input =>"race a car"; output => True
+    - Palindrome: input => "aba"; output => True
+    - Remove one of the middle letters to make (almost) palindrome: input => "abccdba"; output => True
+    - Not almost palindromes: input => "abcdefdba"; output => False
+    - Empty string: input => ""; output => True
+    - One character string: input => "a"; output => True
+    - Two character string: input => "ab"; output => True
+    
+
+Step 3: Figure out a solution without code (pseudocode) =>
+    - input => 
+   
+
+Step 4: Brute Force Solution => Get to a working solution that is able to find
+a solution if one exists and returns a message or something if there is no solution
+available. See precourse-solutions.py Chapter x: Section 1 for solution
+
+Step 5: Code explanation => 
+    - explanation: 
+
+Step 6: Test the code against the edgecases =>
+    - No solution: input => 
+
+Step 7: Space and Time Complexity =>
+    - How much of the time and space resources will consume relative to the input size,
+    since inputs usually scale ?
+
+Step 8: Optimize the Solution => See precourse-solutions.py 
+Chapter x: Section 2 for solution =>
+    - Can the solution be optimized? If one Complexity is significantly better
+    than the other, then the solution can be optimized. 
+
+
+Step 9: Repeat Steps 5-7 with Optimized Solution =>
